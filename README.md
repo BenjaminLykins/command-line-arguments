@@ -32,7 +32,7 @@ npm install command-line-arguments --save
 ##Examples
 
 ```
-//$ node addFoods.js food -name --hamburger -calories --105
+//$ node addFoods.js food -name --hamburger -calories --400 -name --hotdog -calories --350
 ```
 
 #Licensing
