@@ -15,6 +15,8 @@ describe('#command-line-arguments', function() {
         };
         expect(result).to.deep.equal(expected);
     });
+
+    
     it('#Test Using Arrays', function(){
       var result = cla.getGetCommandLineArguments(['FavoriteThings', '-sports', '--basketball', '--baseball', '--football',
     '-languages', '--JavaScript', '--Python', '--HTML']);
@@ -26,11 +28,22 @@ describe('#command-line-arguments', function() {
       };
       expect(result).to.deep.equal(expected);
     });
+
+
     it('#Empty List', function(){
       var result = cla.getGetCommandLineArguments([]);
-      var expected = {};
+      var expected = [];
       expect(result).to.deep.equal(expected);
     });
+
+
+    it('#Single Level Object Test', function() {
+        var result = cla.getGetCommandLineArguments(['lions', 'tigers','bears']);
+        var expected = ['lions', 'tigers','bears'];
+        expect(result).to.deep.equal(expected);
+    });
+
+
     it('#Bad Inputs', function(){
       var result = cla.getGetCommandLineArguments(['person', '-firstname', '--Benjamin', '----badinput', '-lastname', '--Lykins', '-birthday', '--7/1/95']);
       var expected = {
@@ -41,6 +54,5 @@ describe('#command-line-arguments', function() {
         }
       };
       expect(result).to.deep.equal(expected);
-    })
-    //Need bad input test
+    });
 });

@@ -20,7 +20,7 @@ Would serialize to
 ## Usage
 ```
 //$ exampleProgram person -firstname --john -lastname --smith
-var cla = require('./command-line-arguments');
+var cla = require('command-line-arguments');
 
 var params = cla.getGetCommandLineArguments(process.argv.slice(2,process.argv.length));
 console.log(params.firstname); //prints john
@@ -34,8 +34,17 @@ npm install command-line-arguments --save
 ##Examples
 
 ```
-//$ node addFoods.js food -name --hamburger -calories --400 -name --hotdog -calories --350
+//$ node addFood.js name -hotdog calories -400 primary-ingredients -bun -dog -mustard -ketchup
+var food = require('command-line-arguments');
+
+// food =
+//  {
+//    name: 'hotdog',
+//    calories: '400',
+//    'primary-ingredients': [ 'bun', 'dog', 'mustard', 'ketchup' ]
+//  };
+
 ```
 
-#Licensing
+##Licensing
 This project is licensed under the terms of the MIT license
