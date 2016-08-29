@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/BenjaminLykins/command-line-arguments.svg?branch=master)](https://travis-ci.org/BenjaminLykins/command-line-arguments)
 [![Coverage Status](https://coveralls.io/repos/github/BenjaminLykins/command-line-arguments/badge.svg?branch=master)](https://coveralls.io/github/BenjaminLykins/command-line-arguments?branch=master)
 # command-line-arguments
-Serialize JavaScript objects from command line arguments
+Simple way to serialize JavaScript objects from command line arguments
 
 ## Synopsis
 You can make JSON style objects directly from command line arguments using the simple notation
@@ -20,6 +20,7 @@ Would serialize to
 ## Usage
 ```
 //$ exampleProgram person -firstname --john -lastname --smith
+
 var cla = require('command-line-arguments');
 
 var params = cla.getGetCommandLineArguments(process.argv.slice(2,process.argv.length));
@@ -35,7 +36,9 @@ npm install command-line-arguments --save
 
 ```
 //$ node addFood.js name -hotdog calories -400 primary-ingredients -bun -dog -mustard -ketchup
-var food = require('command-line-arguments');
+
+var cla = require('command-line-arguments');
+food = cla.getCommandLineArguments();
 
 // food =
 //  {
@@ -43,7 +46,30 @@ var food = require('command-line-arguments');
 //    calories: '400',
 //    'primary-ingredients': [ 'bun', 'dog', 'mustard', 'ketchup' ]
 //  };
+```
 
+```
+//$ node nouns.js person place thing
+
+var cla = require('command-line-arguments');
+var nouns = cla.getCommandLineArguments();
+
+// nouns = ['person', 'place', 'thing'];
+```
+
+```
+//$ node program.js
+
+var params = ['car', '-model', '--2001 Toyota Corolla', '-milage', '--219,000', '-color', '--tan' ];
+var paramsParsed = cla.getCommandLineArguments(params);
+
+// paramsParsed = {
+//  car: {
+//    model: '2001 Toyota Corolla',
+//    milage: '219,000',
+//    color: 'tan'
+//  }
+//}
 ```
 
 ##Licensing
