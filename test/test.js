@@ -16,6 +16,22 @@ describe('#command-line-arguments', function() {
         expect(result).to.deep.equal(expected);
     });
 
+    it('#Standard Test 2', function() {
+        var result = cla.getCommandLineArguments(['person', '-firstname', '--Benjamin', '-lastname', '--Lykins', '-birthday', '--7/1/95',
+      'dog', '-name', '--Cocoa', '-birthday', '--8/1/2007']);
+        var expected = {
+          person: {
+            firstname: 'Benjamin',
+            lastname: 'Lykins',
+            birthday: '7/1/95'
+          },
+          dog: {
+            name: 'Cocoa',
+            birthday: '8/1/2007'
+          }
+        };
+        expect(result).to.deep.equal(expected);
+    });
 
     it('#Test Using Arrays', function(){
       var result = cla.getCommandLineArguments(['FavoriteThings', '-sports', '--basketball', '--baseball', '--football',
