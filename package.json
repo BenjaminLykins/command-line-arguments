@@ -1,6 +1,6 @@
 {
   "name": "command-line-arguments",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Serialize JavaScript objects from command line arguments",
   "main": "index.js",
   "scripts": {
