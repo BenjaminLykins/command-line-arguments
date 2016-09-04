@@ -24,8 +24,9 @@ Would serialize to
 
 var cla = require('command-line-arguments');
 
-var params = cla.getGetCommandLineArguments(process.argv.slice(2,process.argv.length));
+var params = cla.getCommandLineArguments(process.argv.slice(2,process.argv.length));
 console.log(params.firstname); //prints john
+
 ```
 
 ##Install
