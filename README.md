@@ -24,7 +24,7 @@ Would serialize to
 
 var cla = require('command-line-arguments');
 
-var params = cla.getCommandLineArguments(process.argv.slice(2,process.argv.length));
+var params = cla.getCommandLineArguments();
 console.log(params.firstname); //prints john
 
 ```
@@ -35,7 +35,6 @@ npm install command-line-arguments --save
 ```
 
 ##Examples
-
 ```
 //$ node addFood.js name -hotdog calories -400 primary-ingredients -bun -dog -mustard -ketchup
 
@@ -50,6 +49,7 @@ food = cla.getCommandLineArguments();
 //  };
 ```
 
+Simple arrays are supported
 ```
 //$ node nouns.js person place thing
 
@@ -59,6 +59,7 @@ var nouns = cla.getCommandLineArguments();
 // nouns = ['person', 'place', 'thing'];
 ```
 
+You can pass in the parameters if you need to, or pass in no parameters and it will automatically read the command line arguments
 ```
 //$ node program.js
 
