@@ -37,7 +37,7 @@ jspm_packages
 .node_repl_history
 
 #Tests
-.quick-test.js
+.manual-test.js
 
 #Pseudocode
 .pseudocode.txt
