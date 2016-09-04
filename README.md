@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/BenjaminLykins/command-line-arguments.svg?branch=master)](https://travis-ci.org/BenjaminLykins/command-line-arguments)
 [![Coverage Status](https://coveralls.io/repos/github/BenjaminLykins/command-line-arguments/badge.svg?branch=master)](https://coveralls.io/github/BenjaminLykins/command-line-arguments?branch=master)
-[![npm](https://img.shields.io/npm/v/npm.svg?maxAge=2592000)](https://www.npmjs.com/package/command-line-arguments)
+[![NPM](https://nodei.co/npm/command-line-arguments.png?mini=true)](https://npmjs.org/package/command-line-arguments)
 # command-line-arguments
 Simple way to serialize JavaScript objects from command line arguments
 
