@@ -3,7 +3,7 @@ logs
 *.log
 npm-debug.log*
 
-# Runtime data
+# Runtime datas
 pids
 *.pid
 *.seed
@@ -38,3 +38,6 @@ jspm_packages
 
 #Tests
 .quick-test.js
+
+#Pseudocode
+.pseudocode.txt
