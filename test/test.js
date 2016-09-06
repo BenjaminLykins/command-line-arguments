@@ -59,6 +59,17 @@ describe('#command-line-arguments', function() {
         expect(result).to.deep.equal(expected);
     });
 
+    it('#Test With Numbers', function() {
+        var result = cla.getCommandLineArguments(['powers_of_two', '-1','-2','-4','-8']);
+        var expected = {powers_of_two: [1,2,4,8]};
+        expect(result).to.deep.equal(expected);
+    });
+
+    it('#Test With Numbers 2', function() {
+        var result = cla.getCommandLineArguments(['my_favorite_number', '-12']);
+        var expected = {my_favorite_number: 12};
+        expect(result).to.deep.equal(expected);
+    });
 
     it('#Bad Inputs', function(){
       var result = cla.getCommandLineArguments(['person', '-firstname', '--Benjamin', '----badinput', '-lastname', '--Lykins', '-birthday', '--7/1/95']);
