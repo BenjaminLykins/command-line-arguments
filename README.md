@@ -7,20 +7,21 @@ Simple way to serialize JavaScript objects from command line arguments
 ## Synopsis
 You can make JSON style objects directly from command line arguments using the simple notation
 ```
-$ node add-contact.js person -firstname --john -lastname --smith
+$ node add-contact.js person -firstname --john -lastname --smith -age --30
 ```
 Would serialize to
 ```
 {
   person: {
     firstname: 'john',
-    lastname: 'smith'
+    lastname: 'smith',
+    age: 30
   }
 }
 ```
 ## Usage
 ```
-//$ exampleProgram person -firstname --john -lastname --smith
+//$ exampleProgram person -firstname --john -lastname --smith -age --30
 
 var cla = require('command-line-arguments');
 
@@ -44,7 +45,7 @@ food = cla.getCommandLineArguments();
 // food =
 //  {
 //    name: 'hotdog',
-//    calories: '400',
+//    calories: 400,
 //    'primary-ingredients': [ 'bun', 'dog', 'mustard', 'ketchup' ]
 //  };
 ```
